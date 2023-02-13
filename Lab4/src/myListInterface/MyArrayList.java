@@ -177,19 +177,37 @@ public class MyArrayList<E> implements MyList<E> {
 	// Create a list
 	 var myArrayList = new MyArrayList<Integer>();
 	 
+	 long begin, end, time;
+	 
 	 //add 4 elements
-	for (int i = 1; i < 5; i++) 
-	myArrayList.add(i);
-	System.out.println("Initial list: " + myArrayList);
+	for (int i = 1; i < 5; i++) {
+		begin = System.nanoTime();
+		myArrayList.add(i);
+		end = System.nanoTime();
+		time = end - begin;
+		System.out.println("time: " + time);
+		System.out.println("Initial list: " + myArrayList);
+	}
 	 //add 4 more in front of the list
-	for (int i = 1; i < 5; i++) 
-	myArrayList.add(0, i+10);
-	System.out.println("List after modification: " + myArrayList); 
+	for (int i = 1; i < 5; i++)  {
+		begin = System.nanoTime();
+		myArrayList.add(0, i+10);
+		end = System.nanoTime();
+		time = end - begin;
+		System.out.println("time: " + time);
+		System.out.println("List after modification: " + myArrayList); 
+	}
 	 
 	 //remove 3 last elements
-	for (int i = 0; i < 3; i++) 
-	myArrayList.remove(myArrayList.size() - 1);
-	System.out.println("List after removal: " + myArrayList); 
+	for (int i = 0; i < 3; i++) {
+		begin = System.nanoTime();
+		myArrayList.remove(myArrayList.size() - 1);
+		end = System.nanoTime();
+		time = end - begin;
+		System.out.println("time: " + time);
+		System.out.println("List after removal: " + myArrayList); 
+	}
+	
 	}
 
 }
